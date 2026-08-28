@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Float, Boolean, ForeignKey
+from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, Float
 from app.database import Base
 
 class User(Base):
@@ -17,6 +17,5 @@ class Product(Base):
     quantity = Column(Integer, default=1)
     price = Column(Float, nullable=True)
     is_bought = Column(Boolean, default=False)
-
     
     user_id = Column(Integer, ForeignKey("users.id"))
